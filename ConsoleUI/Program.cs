@@ -16,7 +16,8 @@ namespace ConsoleUI
             //AddCar();
             //AddColor();
             //AddBrand();
-            AddRental();
+            //AddRental();
+            
 
         }
         private static void AddRental()

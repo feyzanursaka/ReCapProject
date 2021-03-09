@@ -5,6 +5,7 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -16,10 +17,23 @@ namespace Business.Concrete
         {
             _rentalDal = rentalDal;
         }
+        private bool isRentable(Rental rental)
+        {
+            Rental notReturned = _rentalDal.GetAll(r => r.ReturnDate == null).SingleOrDefault(r => r.CarId == rental.CarId);
+            return notReturned == null ? true : false;
+
+        }
         public IResult Add(Rental rental)
         {
-            _rentalDal.Add(rental);
-            return new Result(true, Messages.RentalAdded);
+            if (isRentable(rental))
+            {
+                _rentalDal.Add(rental);
+                return new SuccessResult("Aracınız Kiralandı");
+            }
+            else
+            {
+                return new ErrorResult("Araç Şuan Kiralık. Kiralama Başarısız");
+            }
         }
 
         public IResult Delete(Rental rental)
