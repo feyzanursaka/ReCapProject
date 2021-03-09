@@ -65,5 +65,17 @@ namespace Business.Concrete
             }
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetail());
         }
+
+        public IResult Delete(Car car)
+        {
+            _carDal.Delete(car);
+            return new Result(true, Messages.CarDeleted);
+        }
+
+        public IResult Update(Car car)
+        {
+            _carDal.Update(car);
+            return new Result(true, Messages.CarUpdated);
+        }
     }
 }

@@ -20,7 +20,14 @@ namespace Business.Concrete
 
         public IResult Add(Brand brand)
         {
+            _brandDal.Add(brand);
             return new Result(true, Messages.BrandAdded);
+        }
+
+        public IResult Delete(Brand brand)
+        {
+            _brandDal.Delete(brand);
+            return new Result(true, Messages.BrandDeleted);
         }
 
         public IDataResult<List<Brand>> GetAll()
@@ -30,7 +37,13 @@ namespace Business.Concrete
 
         public IDataResult<Brand> GetById(int brandId)
         {
-            return new SuccessDataResult<Brand>(_brandDal.Get(p => p.BrandId == brandId));
+            return new SuccessDataResult<Brand>(_brandDal.Get(p => p.Id == brandId));
+        }
+
+        public IResult Update(Brand brand)
+        {
+            _brandDal.Update(brand);
+            return new Result(true, Messages.BrandUpdated);
         }
     }
 }

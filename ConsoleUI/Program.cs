@@ -11,7 +11,56 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             //CarTest();
-            BrandTest();
+            //BrandTest();
+            //AddCustomer();
+            //AddCar();
+            //AddColor();
+            //AddBrand();
+            AddRental();
+
+        }
+        private static void AddRental()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            var result = rentalManager.Add(new Rental {  RentDate = DateTime.Now, ReturnDate = DateTime.Now, CarId = 1, CustomerId = 8 });
+
+            if (result.Success == true)
+            {
+                Console.WriteLine(result.Message);
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+        }
+        private static void AddCar()
+        {
+            CarManager carManager = new CarManager(new EfCarDal());
+
+            carManager.Add(new Car { BrandId = 1, ColorId = 1, CarName = "Audi", ModelYear = "2010", DailyPrice = 222, Description = "Hasarsız" });
+            
+        }
+        private static void AddColor()
+        {
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+
+            colorManager.Add(new Color {  ColorName = "Sarı" });
+            colorManager.Add(new Color {  ColorName = "Siyah" });
+            colorManager.Add(new Color {  ColorName = "Beyaz" });
+        }
+
+        private static void AddBrand()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            brandManager.Add(new Brand {  BrandName = "Ford" });
+            brandManager.Add(new Brand {  BrandName = "BMW" });
+            brandManager.Add(new Brand {  BrandName = "Mercedes" });
+        }
+        private static void AddCustomer()
+        {
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+
+            customerManager.Add(new Customer { CompanyName = "sdfsdf", UserId = 1 });
         }
 
         private static void BrandTest()
