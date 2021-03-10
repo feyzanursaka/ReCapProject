@@ -19,11 +19,39 @@ namespace WebAPI.Controllers
         {
             _carService = carService;
         }
-
+        [HttpPost("add")]
+        public IActionResult PostAdd(Car car)
+        {
+            var result = _carService.Add(car);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("delete")]
+        public IActionResult PostDelete(Car car)
+        {
+            var result = _carService.Delete(car);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("update")]
+        public IActionResult PostUpdate(Car car)
+        {
+            var result = _carService.Update(car);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
         [HttpGet("getall")]
         public IActionResult Get()
         {
-            //Dependency chain
             var result = _carService.GetAll();
             if (result.Success)
             {
@@ -32,9 +60,8 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
         [HttpGet("getbyid")]
-        public IActionResult Get(int id)
+        public IActionResult GetById(int id)
         {
-            //Dependency chain
             var result = _carService.GetById(id);
             if (result.Success)
             {
@@ -42,10 +69,30 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-        [HttpPost("add")]
-        public IActionResult Post(Car car)
+        [HttpGet("getbybrandid")]
+        public IActionResult GetByBrandId(int id)
         {
-            var result = _carService.Add(car);
+            var result = _carService.GetByBrandId(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("getbydailyprice")]
+        public IActionResult GetByDailyPrice(decimal min, decimal max)
+        {
+            var result = _carService.GetByDailyPrice(min, max);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("getcardetail")]
+        public IActionResult GetCarDetail()
+        {
+            var result = _carService.GetCarDetail();
             if (result.Success)
             {
                 return Ok(result);
