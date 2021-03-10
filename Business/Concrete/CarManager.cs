@@ -29,7 +29,7 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.CarNameInValid);
             }
             _carDal.Add(car);
-            return new Result(true, Messages.CarAdded);
+            return new SuccessResult(Messages.CarAdded);
         }
 
         public IDataResult<List<Car>> GetAll()
