@@ -6,12 +6,12 @@ namespace Business.Constants
 {
     public class Messages
     {
-        public static string CarAdded = "Ürün Eklendi";
-        public static string CarDeleted = "Ürün Silindi";
-        public static string CarUpdated = "Ürün Güncellendi";
-        public static string CarNameInValid = "Ürün İsmi Geçersiz";
+        public static string CarAdded = "Araba Eklendi";
+        public static string CarDeleted = "Araba Silindi";
+        public static string CarUpdated = "Araba Güncellendi";
+        public static string CarNameInValid = "Araba İsmi Geçersiz";
         public static string MaintenanceTime = "Sistem Bakımda";
-        public static string CarListed = "Ürün Listelendi";
+        public static string CarListed = "Araba Listelendi";
 
         public static string BrandAdded = "Marka Eklendi";
         public static string BrandDeleted = "Marka Silindi";
@@ -37,5 +37,15 @@ namespace Business.Constants
         public static string UserDeleted = "Kullanıcı Silindi";
         public static string UserUpdated = "Kullanıcı Güncellendi";
         public static string UserListed = "Kullanıcı Listelendi";
+
+        public static string CarImageAdded = "Araba Resmi Eklendi";
+        public static string CarImageListed = "Araba Resmi Listelendi";
+        public static string CarImageUpdated = "Araba Resmi Güncellendi";
+        public static string CarImageDeleted = "Araba Resmi Güncellendi";
+
+        public static string AddedCarImage = "Araba Resmi Eklendi.";
+        public static string DeletedCarImage = "Arabanın Resmi Silindi.";
+        public static string UpdatedCarImage = "Araba Resmi Güncellendi.";
+        public static string FailedCarImageAdd = "Bir Araba En Fazla 5 Resme sahip olabilir.";
     }
 }

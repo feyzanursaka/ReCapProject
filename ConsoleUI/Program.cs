@@ -17,13 +17,13 @@ namespace ConsoleUI
             //AddColor();
             //AddBrand();
             //AddRental();
-            
+
 
         }
         private static void AddRental()
         {
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
-            var result = rentalManager.Add(new Rental {  RentDate = DateTime.Now, ReturnDate = DateTime.Now, CarId = 1, CustomerId = 8 });
+            var result = rentalManager.Add(new Rental { RentDate = DateTime.Now, ReturnDate = DateTime.Now, CarId = 1, CustomerId = 8 });
 
             if (result.Success == true)
             {
@@ -39,23 +39,23 @@ namespace ConsoleUI
             CarManager carManager = new CarManager(new EfCarDal());
 
             carManager.Add(new Car { BrandId = 1, ColorId = 1, CarName = "Audi", ModelYear = "2010", DailyPrice = 222, Description = "Hasarsız" });
-            
+
         }
         private static void AddColor()
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
 
-            colorManager.Add(new Color {  ColorName = "Sarı" });
-            colorManager.Add(new Color {  ColorName = "Siyah" });
-            colorManager.Add(new Color {  ColorName = "Beyaz" });
+            colorManager.Add(new Color { ColorName = "Sarı" });
+            colorManager.Add(new Color { ColorName = "Siyah" });
+            colorManager.Add(new Color { ColorName = "Beyaz" });
         }
 
         private static void AddBrand()
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
-            brandManager.Add(new Brand {  BrandName = "Ford" });
-            brandManager.Add(new Brand {  BrandName = "BMW" });
-            brandManager.Add(new Brand {  BrandName = "Mercedes" });
+            brandManager.Add(new Brand { BrandName = "Ford" });
+            brandManager.Add(new Brand { BrandName = "BMW" });
+            brandManager.Add(new Brand { BrandName = "Mercedes" });
         }
         private static void AddCustomer()
         {
@@ -68,7 +68,7 @@ namespace ConsoleUI
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
 
-             var result = brandManager.GetAll();
+            var result = brandManager.GetAll();
 
             if (result.Success == true)
             {
@@ -100,6 +100,6 @@ namespace ConsoleUI
                 Console.WriteLine(result.Message);
             }
         }
-        
+
     }
 }
