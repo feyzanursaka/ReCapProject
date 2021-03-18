@@ -35,11 +35,11 @@ namespace Business.Concrete
             {
                 return result;
             }
-
-            carImage.ImagePath = FileHelper.Add(file);
-            carImage.CarImageDate = DateTime.Now;
-            _carImageDal.Add(carImage);
-
+          
+                carImage.ImagePath = FileHelper.Add(file);
+                carImage.CarImageDate = DateTime.Now;
+                _carImageDal.Add(carImage);
+            
             return new SuccessResult(Messages.AddedCarImage);
         }
 

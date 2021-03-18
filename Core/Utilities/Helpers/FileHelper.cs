@@ -37,6 +37,7 @@ namespace Core.Utilities.Helpers
             try
             {
 
+
                 if (sourcePath.Length > 0)
                 {
                     using (var stream = new FileStream(result.newPath, FileMode.Create))
@@ -75,9 +76,7 @@ namespace Core.Utilities.Helpers
             string fileExtension = ff.Extension;
 
             var creatingUniqueFilename = Guid.NewGuid().ToString("N")
-               + "_" + DateTime.Now.Month + "_"
-               + DateTime.Now.Day + "_"
-               + DateTime.Now.Year + fileExtension;
+               + fileExtension;
 
 
             string path = Environment.CurrentDirectory + @"\wwwroot\Images";
