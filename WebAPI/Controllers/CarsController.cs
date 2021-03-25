@@ -55,7 +55,7 @@ namespace WebAPI.Controllers
         //[Authorize(Roles ="Product.List")]
         public IActionResult Get()
         {
-            Thread.Sleep(5000);
+            //Thread.Sleep(5000);
             var result = _carService.GetAll();
             if (result.Success)
             {
