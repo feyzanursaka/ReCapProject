@@ -38,7 +38,7 @@ namespace ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            carManager.Add(new Car { BrandId = 1, ColorId = 1, CarName = "Audi", ModelYear = "2010", DailyPrice = 222, Description = "Hasarsız" });
+            carManager.Add(new Car { BrandId = 1, ColorId = 1,  ModelYear = "2010", DailyPrice = 222, Description = "Hasarsız" });
 
         }
         private static void AddColor()
@@ -84,15 +84,15 @@ namespace ConsoleUI
         }
         private static void CarTest()
         {
-            CarManager productManager = new CarManager(new EfCarDal());
+            CarManager carManager = new CarManager(new EfCarDal());
 
-            var result = productManager.GetCarDetail();
+            var result = carManager.GetCarDetails();
 
             if (result.Success == true)
             {
                 foreach (var car in result.Data)
                 {
-                    Console.WriteLine(car.CarName + "/" + car.BrandName);
+                    Console.WriteLine( car.BrandName);
                 }
             }
             else

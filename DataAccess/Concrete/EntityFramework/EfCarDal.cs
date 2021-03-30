@@ -13,93 +13,28 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfCarDal : EfEntityRepositoryBase<Car, MyDataBaseContext>, ICarDal
     {
-        public List<CarDetailDto> GetCarDetail()
+        public List<CarDetailDto> GetCarDetails(Expression<Func<Car, bool>> filter = null)
         {
             using (MyDataBaseContext context = new MyDataBaseContext())
             {
-                var result = from c in context.Cars
-                             join b in context.Brands
-                             on c.BrandId equals b.Id
-                             join col in context.Colors
-                             on c.ColorId equals col.Id
+                var result = from c in filter is null ? context.Cars : context.Cars.Where(filter)
+                             join b in context.Brands on c.BrandId equals b.Id
+                             join co in context.Colors on c.ColorId equals co.Id
                              select new CarDetailDto
                              {
                                  CarId = c.Id,
-                                 CarName = c.CarName,
+                               
                                  BrandName = b.BrandName,
-                                 ColorName = col.ColorName,
-                                 ModelYear = c.ModelYear,
+                                 ColorName = co.ColorName,
                                  DailyPrice = c.DailyPrice,
-                                 Description = c.Description
+                                 ModelYear = c.ModelYear,
+                                 Description = c.Description,
+                                 ImagePath = context.CarImages.Where(x => x.CarId == c.Id).FirstOrDefault().ImagePath,
+                                 Status = !(context.Rentals.Any(r => r.CarId == c.Id && (r.ReturnDate == null || r.ReturnDate > DateTime.Now))),
                              };
+
                 return result.ToList();
             }
         }
-		public List<CarDetailDto> GetByBrandDetails(int brandId)
-		{
-			using (MyDataBaseContext context = new MyDataBaseContext())
-			{
-				var result = from c in context.Cars
-							 where c.BrandId == brandId
-							 join b in context.Brands
-							 on c.BrandId equals b.Id
-							 join co in context.Colors
-							 on c.ColorId equals co.Id
-							 select new CarDetailDto
-							 {
-								 CarId = c.Id,
-								 BrandName = b.BrandName,
-								 ColorName = co.ColorName,
-								 DailyPrice = c.DailyPrice
-							 };
-				return result.ToList();
-			}
-		}
-
-		public List<CarDetailDto> GetByColorDetails(int colorId)
-		{
-			using (MyDataBaseContext context = new MyDataBaseContext())
-			{
-				var result = from c in context.Cars
-							 where c.ColorId == colorId
-							 join b in context.Brands
-							 on c.BrandId equals b.Id
-							 join co in context.Colors
-							 on c.ColorId equals co.Id
-							 select new CarDetailDto
-							 {
-								 CarId = c.Id,
-								 BrandName = b.BrandName,
-								 ColorName = co.ColorName,
-								 DailyPrice = c.DailyPrice
-							 };
-				return result.ToList();
-			}
-		}
-
-        public List<CarDetailDto> GetCarDetailsByCarId(int carId)
-        {
-			using (MyDataBaseContext context = new MyDataBaseContext())
-			{
-				var result = from c in context.Cars
-							 where c.Id == carId
-							 join b in context.Brands
-							 on c.BrandId equals b.Id
-							 join co in context.Colors
-							 on c.ColorId equals co.Id
-							 
-							 select new CarDetailDto
-							 {
-								 CarId= c.Id,
-								 BrandName = b.BrandName,
-								 ColorName = co.ColorName,
-								 DailyPrice = c.DailyPrice,
-								 Description = c.Description,
-								 ModelYear = c.ModelYear,
-								 
-							 };
-				return result.ToList();
-			}
-		}
     }
 }
