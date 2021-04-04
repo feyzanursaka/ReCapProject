@@ -38,7 +38,7 @@ namespace ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            carManager.Add(new Car { BrandId = 1, ColorId = 1,  ModelYear = "2010", DailyPrice = 222, Description = "Hasarsız" });
+            carManager.Add(new Car { BrandId = 1, ColorId = 1,  ModelYear = 2010, DailyPrice = 222, Description = "Hasarsız" });
 
         }
         private static void AddColor()
