@@ -63,7 +63,7 @@ namespace Business.Concrete
             return new SuccessResult("findeks silindi");
         }
 
-        public IDataResult<Findeks> CalculateFindeksScore(Findeks findeks) // Fake
+        public IDataResult<Findeks> CalculateFindeksScore(Findeks findeks) 
         {
             findeks.Score = (short)new Random().Next(0, 1901);
 

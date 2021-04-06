@@ -15,5 +15,6 @@ namespace Business.Abstract
         IDataResult<List<Rental>> GetAll();
         IDataResult<Rental> GetById(int rentalId);
         IDataResult<List<RentalDetailDto>> GetRentalDetail();
+        IResult CheckFindeksScoreSufficiency(Rental rental);
     }
 }

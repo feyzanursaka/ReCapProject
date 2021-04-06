@@ -13,31 +13,22 @@ namespace Business.Concrete
 {
     public class RentalManager : IRentalService
     {
-        IRentalDal _rentalDal;
-        public RentalManager(IRentalDal rentalDal)
+        private readonly ICarService _carService;
+        private readonly IFindeksService _findeksService;
+        private readonly IRentalDal _rentalDal;
+
+        public RentalManager(IRentalDal rentalDal, ICarService carService, IFindeksService findeksService)
         {
+            _carService = carService;
+            _findeksService = findeksService;
             _rentalDal = rentalDal;
         }
-        //private bool isRentable(Rental rental)
-        //{
-        //    Rental notReturned = _rentalDal.GetAll(r => r.ReturnDate == null).SingleOrDefault(r => r.CarId == rental.CarId);
-        //    return notReturned == null ? true : false;
 
-        //}
+
         public IResult Add(Rental rental)
         {
             _rentalDal.Add(rental);
             return new Result(true, Messages.RentalAdded);
-
-            //if (isRentable(rental))
-            //{
-            //    _rentalDal.Add(rental);
-            //    return new Result(true,Messages.RentalAdded);
-            //}
-            //else
-            //{
-            //    return new ErrorResult();
-            //}
         }
 
         public IResult Delete(Rental rental)
@@ -65,6 +56,22 @@ namespace Business.Concrete
         {
             _rentalDal.Update(rental);
             return new Result(true, Messages.RentalUpdated);
+        }
+        public IResult CheckFindeksScoreSufficiency(Rental rental)
+        {
+            var car = _carService.GetById(rental.CarId).Data;
+            var findeks = _findeksService.GetByCustomerId(rental.CustomerId).Data;
+
+            if (findeks == null)
+            {
+                return new ErrorResult("Findeks bulunamadı");
+            }
+            if (findeks.Score < car.FindexPoint)
+            {
+                return new ErrorResult("Findeks yeterli Değil");
+            }
+
+            return new SuccessResult("Findeks yeterli");
         }
     }
 }
