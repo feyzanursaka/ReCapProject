@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -47,5 +48,13 @@ namespace Business.Constants
         public static string DeletedCarImage = "Arabanın Resmi Silindi.";
         public static string UpdatedCarImage = "Araba Resmi Güncellendi.";
         public static string FailedCarImageAdd = "Bir Araba En Fazla 5 Resme sahip olabilir.";
+
+        internal static string UserRegistered = "Kullanıcı Kayıt oldu";
+        internal static string UserNotFound = "Kullanıcı bulunamadı";
+        internal static string IncorrectPassword = "Yanlış Şifre";
+        internal static string CorrectPassword = "Doğru Şifre";
+        internal static string TokenCreated = "Token Oluşturuldu";
+        internal static string UserExists = "Bu Kullanıcı Mevcut";
+        
     }
 }

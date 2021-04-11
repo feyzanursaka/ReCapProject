@@ -21,6 +21,12 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<FakeCard>>(_fakeCardDal.GetAll(c => c.CardNumber == cardNumber));
         }
+      
+        public IDataResult<List<FakeCard>> GetByUserId(int userId)
+        {
+            
+            return new SuccessDataResult<List<FakeCard>>(_fakeCardDal.GetAll(b => b.UserId == userId));
+        }
 
         public IDataResult<List<FakeCard>> GetAll()
         {

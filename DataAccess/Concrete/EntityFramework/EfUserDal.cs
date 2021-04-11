@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Entities.DTOs;
+using System.Linq.Expressions;
 
 namespace DataAccess.Concrete.EntityFramework
 {
@@ -23,5 +25,6 @@ namespace DataAccess.Concrete.EntityFramework
 
             }
         }
+        
     }
 }

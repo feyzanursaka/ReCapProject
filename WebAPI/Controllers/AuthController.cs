@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : Controller
@@ -50,10 +51,12 @@ namespace WebAPI.Controllers
             var result = _authService.CreateAccessToken(registerResult.Data);
             if (result.Success)
             {
-                return Ok(result.Data);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);
         }
+
+        
     }
 }
