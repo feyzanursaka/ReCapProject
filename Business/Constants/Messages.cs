@@ -1,4 +1,5 @@
 ﻿using Core.Entities.Concrete;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -38,6 +39,12 @@ namespace Business.Constants
         public static string UserDeleted = "Kullanıcı Silindi";
         public static string UserUpdated = "Kullanıcı Güncellendi";
         public static string UserListed = "Kullanıcı Listelendi";
+        public static string UserRegistered = "Kullanıcı Kayıt oldu";
+        public static string UserNotFound = "Kullanıcı bulunamadı";
+        public static string IncorrectPassword = "Yanlış Şifre";
+        public static string CorrectPassword = "Doğru Şifre";
+        public static string TokenCreated = "Token Oluşturuldu";
+        public static string UserExists = "Bu Kullanıcı Mevcut";
 
         public static string CarImageAdded = "Araba Resmi Eklendi";
         public static string CarImageListed = "Araba Resmi Listelendi";
@@ -49,12 +56,18 @@ namespace Business.Constants
         public static string UpdatedCarImage = "Araba Resmi Güncellendi.";
         public static string FailedCarImageAdd = "Bir Araba En Fazla 5 Resme sahip olabilir.";
 
-        internal static string UserRegistered = "Kullanıcı Kayıt oldu";
-        internal static string UserNotFound = "Kullanıcı bulunamadı";
-        internal static string IncorrectPassword = "Yanlış Şifre";
-        internal static string CorrectPassword = "Doğru Şifre";
-        internal static string TokenCreated = "Token Oluşturuldu";
-        internal static string UserExists = "Bu Kullanıcı Mevcut";
+        public static string FindexNotFound = "Findeks Bulunamadı";
+        public static string AddedFindex = "Findeks Eklendi";
+        public static string UpdatedFindex = "Findeks Güncellendi";
+        public static string DeletedFindex = "Findeks Silindi";
+        public static string FindexNotEnough = "Findeks Yeterli Değil";
+        public static string FindexEnough = "Findeks Yeterli";
+
+        public static string AddedPayment = "Payment Eklendi";
+        public static string DeletedPayment = "Payment Silindi";
+        public static string ListedPayment = "Payment Listelendi";
+        public static string UpdatedPayment = "Payment Güncellendi";
+
         
     }
 }

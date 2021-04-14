@@ -27,29 +27,8 @@ namespace Business.Concrete
         //[CacheRemoveAspect("IPaymentService.Get")]
         public IResult Add(Payment payment)
         {
-            //if (rental != null)
-            //{
-            //    var car = _carService.GetById(rental.CarId).Data;
-
-            //    var calculatedDate = (rental.ReturnDate - rental.RentDate).TotalDays;
-            //    decimal totalPrice = car.DailyPrice * Convert.ToDecimal(calculatedDate);
-
-            //    Payment payment = new Payment()
-            //    {
-            //        RentalId = 6008,
-            //        Amount = totalPrice,
-            //        CustomerId = rental.CustomerId,
-            //        PaymentDate = DateTime.Now
-            //    };
-
-            //    _paymentService.Add(payment);
-
-            //    return new SuccessResult();
-            //}
-
-            //return new ErrorResult(Messages.PaymentFailure);
             _paymentDal.Add(payment);
-            return new SuccessResult("payment eklendi");
+            return new SuccessResult(Messages.AddedPayment);
         }
 
         //[SecuredOperation("admin")]
@@ -57,7 +36,7 @@ namespace Business.Concrete
         public IResult Delete(Payment payment)
         {
             _paymentDal.Delete(payment);
-            return new SuccessResult("payment silindi");
+            return new SuccessResult(Messages.DeletedPayment);
         }
 
         //[SecuredOperation("user,admin")]
@@ -68,7 +47,7 @@ namespace Business.Concrete
             {
                 return new ErrorDataResult<List<Payment>>(Messages.MaintenanceTime);
             }
-            return new SuccessDataResult<List<Payment>>(_paymentDal.GetAll(), "payment listelendi");
+            return new SuccessDataResult<List<Payment>>(_paymentDal.GetAll(), Messages.ListedPayment);
         }
 
         //[SecuredOperation("user,admin")]
@@ -88,7 +67,7 @@ namespace Business.Concrete
         public IResult Update(Payment payment)
         {
             _paymentDal.Update(payment);
-            return new SuccessResult("payment güncellendi");
+            return new SuccessResult(Messages.UpdatedPayment);
         }
     }
 }

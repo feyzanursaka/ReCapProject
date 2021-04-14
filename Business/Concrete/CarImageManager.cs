@@ -72,7 +72,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarImageValidator))]
         public IDataResult<List<CarImage>> GetImagesByCarId(int carIdd)
         {
-            return new SuccessDataResult<List<CarImage>>(CheckIfCarImageNull(carIdd), "listelendi");
+            return new SuccessDataResult<List<CarImage>>(CheckIfCarImageNull(carIdd), Messages.CarImageListed);
         }
 
         //business rules

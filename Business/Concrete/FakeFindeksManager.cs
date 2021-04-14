@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -26,7 +27,7 @@ namespace Business.Concrete
         public IDataResult<Findeks> GetByCustomerId(int customerId)
         {
             var findeks = _findeksDal.Get(f => f.CustomerId == customerId);
-            if (findeks == null) return new ErrorDataResult<Findeks>("findeks bulunamadı");
+            if (findeks == null) return new ErrorDataResult<Findeks>(Messages.FindexNotFound);
 
             return new SuccessDataResult<Findeks>(findeks);
         }
@@ -43,7 +44,7 @@ namespace Business.Concrete
             var newFindeks = CalculateFindeksScore(findeks).Data;
             _findeksDal.Add(newFindeks);
 
-            return new SuccessResult("findeks eklendi");
+            return new SuccessResult(Messages.AddedFindex);
         }
 
    
@@ -52,7 +53,7 @@ namespace Business.Concrete
             var newFindeks = CalculateFindeksScore(findeks).Data;
             _findeksDal.Update(newFindeks);
 
-            return new SuccessResult("findeks güncellendi");
+            return new SuccessResult(Messages.UpdatedFindex);
         }
 
        
@@ -60,7 +61,7 @@ namespace Business.Concrete
         {
             _findeksDal.Delete(findeks);
 
-            return new SuccessResult("findeks silindi");
+            return new SuccessResult(Messages.DeletedFindex);
         }
 
         public IDataResult<Findeks> CalculateFindeksScore(Findeks findeks) 

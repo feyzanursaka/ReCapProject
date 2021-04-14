@@ -64,14 +64,14 @@ namespace Business.Concrete
 
             if (findeks == null)
             {
-                return new ErrorResult("Findeks bulunamadı");
+                return new ErrorResult(Messages.FindexNotFound);
             }
             if (findeks.Score < car.FindexPoint)
             {
-                return new ErrorResult("Findeks yeterli Değil");
+                return new ErrorResult(Messages.FindexNotEnough);
             }
 
-            return new SuccessResult("Findeks yeterli");
+            return new SuccessResult(Messages.FindexEnough);
         }
     }
 }
