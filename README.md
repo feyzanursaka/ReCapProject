@@ -7,6 +7,12 @@
 <p>Proje, farklı katmanlar oluşturularak Plug and Play (Tak ve Çalıştır) Sistemler şeklinde yazıldı.
 <h3>1.Business</h3>
 <p>Kuralların yazıldığı yerdir. Her zaman yeni bir kural gelir. Mesela Arabanın günlük kira fiyatı 0' dan büyük olmalıdır.</p>
+<ul style="list-style-type:disc">
+ <li>Business katmanı Entities ve Data Accesse bağımlıdır.</li>
+ <li>Bu katmanda soyut olan servisler ve onların somutu olan manager classları yazıldı. </li>
+ <li>Bu classlar ilgili entity için CRUD operasyonlarını ve isteğe göre farklı operasyonları içerir. (getAll, getById vb.)</li>
+ <li>Entities katmanını kullanmak için referans vermek gerekir. Bu yüzden Data Access katmanı Entities katmanına bağımlıdır.</li>
+</ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/1.PNG" width="200" height="250">
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/2.PNG" width="200" height="250">
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/3.PNG" width="200" height="40">
@@ -17,6 +23,12 @@
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/6.PNG" width="200" height="180">
 <h3>3.Data Access</h3>
 <p>Veriye ulaşmak için yazdığımız kodları içeren katmandır. Veriye erişim için farklı teknikler vardır. İlerde bu tekniklere yenisini eklemek veya çıkarmak istersek diğer katmanlar bundan etkilenmez.</p>
+<ul style="list-style-type:disc">
+ <li>İş yapan classları oluşturulurken ilk önce onun interfacesi oluşturulur.</li>
+ <li>I ile başlayanlar interfacelerdir</li>
+ <li>Dal (Data Access Layer)</li>
+ <li>Entities katmanını kullanmak için referans vermek gerekir. Bu yüzden Data Access katmanı Entities katmanına bağımlıdır.</li>
+</ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/7.PNG" width="200" height="450">
 <h3>4.Entities</h3>
 <p>Varlıkların yazıldığı yerdir.</p>
