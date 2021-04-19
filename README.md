@@ -11,7 +11,6 @@
  <li>Business katmanı Entities ve Data Accesse bağımlıdır.</li>
  <li>Bu katmanda soyut olan servisler ve onların somutu olan manager classları yazıldı. </li>
  <li>Bu classlar ilgili entity için CRUD operasyonlarını ve isteğe göre farklı operasyonları içerir. (getAll, getById vb.)</li>
- <li>Entities katmanını kullanmak için referans vermek gerekir. Bu yüzden Data Access katmanı Entities katmanına bağımlıdır.</li>
 </ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/1.PNG" width="200" height="250">
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/2.PNG" width="200" height="250">
