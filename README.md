@@ -40,8 +40,12 @@
 </ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/7.PNG" width="200" height="450">
 <h3>4.Entities</h3>
-<p>Varlıkların yazıldığı yerdir.</p>
+<p>Varlıkların yazıldığı katmandır.</p>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/8.PNG" width="200" height="350">
 <h3>5.API</h3>
 <p>Business ve Data Access API katmanı vasıtasıyla dış dünyaya açılır.</p>
+<ul style="list-style-type:disc">
+ <li>Business katmanında yazdığımız service'leri kullanarak Http Post Get işlemleri yapılır.</li>
+ <li>Frontend tarafından istenen service bu katman aracılığıyla kullanılır.</li>
+</ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/9.PNG" width="200" height="450">
