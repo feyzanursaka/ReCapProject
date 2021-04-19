@@ -11,13 +11,16 @@
  <li>Business katmanı Entities ve Data Accesse bağımlıdır.</li>
  <li>Bu katmanda soyut olan servisler ve onların somutu olan manager classları yer alır. </li>
  <li>Bu classlar ilgili entity için CRUD operasyonlarını ve isteğe göre farklı operasyonları içerir. (getAll, getById vb.)</li>
- <li>Autofac/AutofacBussinessModule içinde Service istenilen durumda o service nin managerini registe eder.</li>
- <li>SingleInstance tek bir instance oluşturur. </li>
- <li>ValidationRules/FluentValidation içerisinde ilgili entity için istenilen iş kuralı yazılır. (DailyPrice boş olamaz, DailyPrice 0 dan büyük olmalıdır gibi) </li>
 </ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/1.PNG" width="200" height="250">
+<ul style="list-style-type:disc">
+ <li>Messages içinde string mesajlar tutulur ilgili mesaj buradan çağırılır.</li> </ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/2.PNG" width="200" height="250">
+
+ <ul style="list-style-type:disc"><li>Autofac/AutofacBussinessModule içinde Service istenilen durumda o service nin managerini registe eder.</li>
+ <li>SingleInstance tek bir instance oluşturur. </li></ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/3.PNG" width="200" height="40">
+ <ul style="list-style-type:disc"> <li>ValidationRules/FluentValidation içerisinde ilgili entity için istenilen iş kuralı yazılır. (DailyPrice boş olamaz, DailyPrice 0 dan büyük olmalıdır gibi) </li></ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/4.PNG" width="200" height="65">
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/5.PNG" width="200" height="190">
 <h3>2.Core</h3>
