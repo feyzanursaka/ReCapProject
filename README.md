@@ -9,7 +9,7 @@
 <p>Kuralların yazıldığı yerdir. Her zaman yeni bir kural gelir. Mesela Arabanın günlük kira fiyatı 0' dan büyük olmalıdır.</p>
 <ul style="list-style-type:disc">
  <li>Business katmanı Entities ve Data Accesse bağımlıdır.</li>
- <li>Bu katmanda soyut olan servisler ve onların somutu olan manager classları yazıldı. </li>
+ <li>Bu katmanda soyut olan servisler ve onların somutu olan manager classları yer alır. </li>
  <li>Bu classlar ilgili entity için CRUD operasyonlarını ve isteğe göre farklı operasyonları içerir. (getAll, getById vb.)</li>
 </ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/1.PNG" width="200" height="250">
