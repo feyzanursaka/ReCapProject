@@ -34,6 +34,8 @@
  <li>Diğer katmanlara bağımlı değildir.</li>
  <li>Bütün projelerde kullanılabilir.</li>
  <li>Hangi katmanla ilgilenilecekse o katmanla ilgili klasör koyulur.</li>
+ <li>Entityframework base hale getirilir. Data Access Katmanının yükü hafifler.</li>
+ <li>Utilities/Results Klasörü işlem sonuçlarını kontrol etmeye yarar. (result, success, message)</li>
 </ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/6.PNG" width="200" height="180">
 <h3>3.Data Access</h3>
