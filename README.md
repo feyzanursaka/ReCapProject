@@ -29,6 +29,12 @@
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/5.PNG" width="200" height="190">
 <h3>2.Core</h3>
 <p>Ortak kodların koyulduğu katmandır ve bütün projelerde kullanılabilir. Evrensel kodları içerir.</p>
+<ul style="list-style-type:disc">
+ <li>Diğer katmanları referans almaz.</li>
+ <li>Diğer katmanlara bağımlı değildir.</li>
+ <li>Bütün projelerde kullanılabilir.</li>
+ <li>Hangi katmanla ilgilenilecekse o katmanla ilgili klasör koyulur.</li>
+</ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/6.PNG" width="200" height="180">
 <h3>3.Data Access</h3>
 <p>Veriye ulaşmak için yazdığımız kodları içeren katmandır. Veriye erişim için farklı teknikler vardır. İlerde bu tekniklere yenisini eklemek veya çıkarmak istersek diğer katmanlar bundan etkilenmez.</p>
