@@ -3,6 +3,33 @@
 <h5>İstenilen arabayı kiralamaya yarar. 
     Kişi giriş yapmamışsa arabaların bulunduğu sayfayı (componenti) görebilir. Her arabanın detay sayfası vardır. Giriş Yapmamış olan kişi detaylara gidebilir fakat kiralama yapabilmek için giriş yapması gerekir. Kayıt Ol ve Giriş Yap sayfaları mevcuttur. Giriş yapan kişi kiralama işlemini gerçekleştirmek için findeks puanının yeterli olması gerekir. Eğer yeterliyse ödeme sayfasına yönlendirilir. Eğer Kredi Kartı mevcutsa işlem başarılı olur değilse kredi kartı eklenir ve ödeme gerçekleştirilir. Giriş yapan kişi yeni araba, marka ve renk ekleme, silme ve güncelleme işlemlerini ayrıyeten profilini güncelleme işlemini gerçekleştirebilir.</h5>
     
+# Kullanılan Teknolojiler   
+<ul style="list-style-type:disc">
+ <li>.NET</li>
+ <li>ASP.NET</li>
+    <ul>
+      <li>Microsoft'un web geliştirme ortamının ve bunları içeren kütüphanelerin toplandığı yapıdır.</li> 
+      <li>.NET projelerindeki web projelerine verilen isimdir.</li>
+      <li>Apı Restful Mimariyi destekler.</li>
+      <li>Restful Mimari, geliştirdiğimiz .NET'i tanımayan bir Java uygulamasının, IOS uygulamasının vb. bizim sistemimizle iletişim kurmasını sağlayan bir ortamdır.</li>
+      <li>Proje, ASP.NET.Core altyapısıyla geliştirilmiştir.</li>
+    </ul> 
+ <li>EntityFramework Core</li>
+ <li>Autofac</li>
+ <li>FluentValidation</li> 
+ <li>MsSql</li> 
+ <li><a href="https://github.com/feyzanursaka/ReCapProject-frontend">Angular for Frontend</a></li> 
+</ul>
+
+# Kullanılan Teknikler  
+<ul style="list-style-type:disc">
+ <li>Layered Architecture Design Pattern</li>
+ <li>AOP</li>
+ <li>JWT</li>
+ <li>Autofac dependency resolver</li>
+ <li>IOC</li> 
+</ul>
+
 # Katmanlar
 <p>Proje, farklı katmanlar oluşturularak Plug and Play (Tak ve Çalıştır) Sistemler şeklinde yazıldı.
 <h3>1.Business</h3>
@@ -53,7 +80,13 @@
 <h3>5.API</h3>
 <p>Business ve Data Access API katmanı vasıtasıyla dış dünyaya açılır.</p>
 <ul style="list-style-type:disc">
- <li>Business katmanında yazdığımız service'leri kullanarak Http Post Get işlemleri yapılır.</li>
- <li>Frontend tarafından istenen service bu katman aracılığıyla kullanılır.</li>
+ <li>Controllers</li>
+    <ul>
+      <li>Gelen istekleri karşılar.</li>
+      <li>Yapılabilecek istekler kodlanır.</li>
+      <li>İstek Restful --> HTTP üzerinden gelir.</li>
+      <li>Business katmanında yazdığımız service'leri kullanarak Http Post Get işlemleri yapılır.</li> 
+    </ul> 
+ <li></li>
 </ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/9.PNG" width="200" height="450">
