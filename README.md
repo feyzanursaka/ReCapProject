@@ -105,6 +105,5 @@
       <li>İstek Restful --> HTTP üzerinden gelir.</li>
       <li>Business katmanında yazdığımız service'leri kullanarak Http Post Get işlemleri yapılır.</li> 
     </ul> 
- <li></li>
 </ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/9.PNG" width="200" height="450">
