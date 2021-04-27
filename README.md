@@ -16,7 +16,14 @@
     </ul> 
  <li>EntityFramework Core</li>
  <li>Autofac</li>
+    <ul>
+      <li>Instance üretimini sağlayan yapıdır.</li> 
+    </ul> 
  <li>FluentValidation</li> 
+    <ul>
+      <li>Eklemek istediğin varlığı, iş kurallarına dahil etmek için bu nesnenin yapısal olarak uygun olup olmadığını kontrol etmeye yarar.</li> 
+      <li>Mesela sisteme kayıt olurken min şu kadar karakter olmalı, şifre şuna uymalı gibi kurallar yani yapısal uyuma doğrulama denir.</li>
+    </ul> 
  <li>MsSql</li> 
  <li><a href="https://github.com/feyzanursaka/ReCapProject-frontend">Angular for Frontend</a></li> 
 </ul>
@@ -25,9 +32,20 @@
 <ul style="list-style-type:disc">
  <li>Layered Architecture Design Pattern</li>
  <li>AOP</li>
+    <ul>
+      <li>Bir metodun önünde, sonunda veya hata verdiğinde çalışan kod parçacığı AOP mimarisi ile yazılır.</li> 
+      <li>Autofac AOP imkanı sunuyor.</li>
+      <li>Bu sayede .NET'in IoC Container'ına Autofac enjekte edilir.</li>
+    </ul> 
  <li>JWT</li>
  <li>Autofac dependency resolver</li>
- <li>IOC</li> 
+ <li>IOC (Inversion of control)</li> 
+    <ul>
+      <li>Değişimin Kontrolü</li> 
+      <li>Hiçbir katman diğerini newlemez, bu işlemi IoC yapar.</li>
+      <li>Mesela CarController'ın IProductService'e ihtiyacı varsa, ASP.NET, Web API IoC Container'a bakar karşılık geleni kullanır.</li>
+      <li>Tüm bellekte bir tane CarManager oluşturulur. Birden fazla client gelsede hepsine aynı instance referansını verir.</li>
+    </ul> 
 </ul>
 
 # Katmanlar
