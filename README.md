@@ -38,12 +38,18 @@
       <li>Bu sayede .NET'in IoC Container'ına Autofac enjekte edilir.</li>
     </ul> 
  <li>JWT</li>
+    <ul>
+      <li>Kullanıcının login olmak istediği bilgiler geçerliyse bu kullanıcıya token verilir.</li> 
+      <li>Bu token Json Web Token denilen formata sahip şifreli bir metindir.</li>
+      <li>Kullanıcıya verildikten sonra kullanıcı bunu değiştiremez.</li>
+      <li>Kullanıcı yapacağı istekleri bu token ile gerçekleştirir.</li>
+    </ul>
  <li>Autofac dependency resolver</li>
  <li>IOC (Inversion of control)</li> 
     <ul>
       <li>Değişimin Kontrolü</li> 
       <li>Hiçbir katman diğerini newlemez, bu işlemi IoC yapar.</li>
-      <li>Mesela CarController'ın IProductService'e ihtiyacı varsa, ASP.NET, Web API IoC Container'a bakar karşılık geleni kullanır.</li>
+      <li>Mesela CarController'ın ICarService'e ihtiyacı varsa, ASP.NET, Web API IoC Container'a bakar karşılık geleni kullanır.</li>
       <li>Tüm bellekte bir tane CarManager oluşturulur. Birden fazla client gelsede hepsine aynı instance referansını verir.</li>
     </ul> 
 </ul>
@@ -80,6 +86,12 @@
  <li>Bütün projelerde kullanılabilir.</li>
  <li>Hangi katmanla ilgilenilecekse o katmanla ilgili klasör koyulur.</li>
  <li>Entityframework base hale getirilir. Data Access Katmanının yükü hafifler.</li>
+ <li>Aspects klasörü içerisinde Caching, Transaction, Performance ve Validation yer alır.</li>
+ <li>Caching, Yapılan istekler serverdaki bellekte tutulur. İstenilen data cache'de varsa cache'den getirilir. Yoksa veritabanından getirilir ve cache'e yazılır.</li>
+ <li>Transaction, tutarlılığı korumak için yapılan yöntemdir.</li>
+ <li>Performance, Metodun önünde kronometreyi başlatır geçen süreyi hesaplar. Bu şekilde performans zafiyetine neden olan metod bulunur.</li>
+ <li>Validation, nesnenin yapısal olarak uygun olup olmadığını kontrol eder.</li>
+ <li>Cross Cutting Concerns, uygulamayı dikine kesen ilgi alanlarıdır. (Loglama, Cache, Validation, Transaction, Authorization)</li>
  <li>Utilities/Results Klasörü işlem sonuçlarını kontrol etmeye yarar. (data, success, message)</li>
 </ul>
 <img src="https://github.com/feyzanursaka/ReCapProject/blob/master/projectImages/6.PNG" width="200" height="180">
